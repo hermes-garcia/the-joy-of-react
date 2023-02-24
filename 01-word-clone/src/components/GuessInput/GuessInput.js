@@ -19,6 +19,7 @@ function GuessInput() {
                 type="text"
                 pattern="[A-Za-z]{5}"
                 maxLength="5"
+                title="5 letter word"
                 placeholder="5 letter word"
                 value={word}
                 onChange={({target}) => {
