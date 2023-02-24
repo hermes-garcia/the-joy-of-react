@@ -12,15 +12,13 @@ function Guess({ attempt, answer }) {
 
   return (
     <p className="guess">
-      {range(5).map((index) => {
-        return (
-          <Cell
-            key={index}
-            letter={result ? result[index].letter : undefined}
-            status={result ? result[index].status : undefined}
-          />
-        );
-      })}
+      {range(5).map((index) => (
+        <Cell
+          key={index}
+          letter={result ? result[index].letter : undefined}
+          status={result ? result[index].status : undefined}
+        />
+      ))}
     </p>
   );
 }
