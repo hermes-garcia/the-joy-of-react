@@ -8,7 +8,6 @@ import { WORDS } from '../../data';
 import Banner from '../Banner';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
-
 function Game() {
   const [answer, setAnswer] = React.useState(sample(WORDS));
   const [attempts, setAttempts] = React.useState([]);
@@ -18,7 +17,7 @@ function Game() {
   console.info({ answer });
 
   const handleGuessInput = (word) => {
-    const newAttempts = [...attempts, word]
+    const newAttempts = [...attempts, word];
     setAttempts(newAttempts);
 
     if (word.toUpperCase() === answer) {
@@ -31,28 +30,28 @@ function Game() {
   const handleResetGame = () => {
     setGameStatus('running');
     setAttempts([]);
-    setAnswer(sample(WORDS.filter(word => word !== answer)));
-  }
+    setAnswer(sample(WORDS.filter((word) => word !== answer)));
+  };
 
   return (
     <>
       <AttemptsList attempts={attempts} answer={answer} />
       <GuessInput handleGuessInput={handleGuessInput} gameStatus={gameStatus} />
-      {gameStatus === 'won' &&
+      {gameStatus === 'won' && (
         <Banner type={'happy'} handleResetGame={handleResetGame}>
           <p>
             <strong>Congratulations!</strong> Got it in{' '}
             <strong>{attempts.length} guesses</strong>.
           </p>
         </Banner>
-      }
-      { gameStatus === 'lost' &&
+      )}
+      {gameStatus === 'lost' && (
         <Banner type={'sad'} handleResetGame={handleResetGame}>
           <p>
             Sorry, the correct answer is <strong>{answer}</strong>.
           </p>
         </Banner>
-      }
+      )}
     </>
   );
 }
