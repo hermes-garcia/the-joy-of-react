@@ -1,13 +1,18 @@
 import React from 'react';
+import Guess from "../Guess";
+import {range} from "../../utils";
+import {NUM_OF_GUESSES_ALLOWED} from "../../constants";
 
 function AttemptsList({ attempts }) {
+  const arr = range(0,NUM_OF_GUESSES_ALLOWED);
+
   return (
     <div className="guess-results">
-      {attempts.map((word, index) => (
-        <p key={index} className="guess">
-          {word}
-        </p>
-      ))}
+      {
+        arr.map(index => (
+          <Guess key={index} attempt={attempts[index]}/>
+        ))
+      }
     </div>
   );
 }
