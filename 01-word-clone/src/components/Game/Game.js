@@ -21,7 +21,7 @@ function Game() {
 
   return (
     <>
-      <AttemptsList attempts={attempts} />
+      <AttemptsList attempts={attempts} answer={answer} />
       <GuessInput handleGuessInput={handleGuessInput} />
     </>
   );
