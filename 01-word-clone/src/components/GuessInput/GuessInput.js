@@ -14,7 +14,7 @@ function GuessInput({ handleGuessInput, gameStatus }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
-        disabled={gameStatus === 'running' ? false: true}
+        disabled={gameStatus !== 'running'}
         id="guess-input"
         type="text"
         pattern="[A-Za-z]{5}"
