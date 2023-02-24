@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({ handleGuessInput }) {
+function GuessInput({ handleGuessInput, gameStatus }) {
   const [word, setWord] = React.useState('');
 
   const handleWordSubmit = (ev) => {
@@ -14,6 +14,7 @@ function GuessInput({ handleGuessInput }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
+        disabled={gameStatus === 'running' ? false: true}
         id="guess-input"
         type="text"
         pattern="[A-Za-z]{5}"
