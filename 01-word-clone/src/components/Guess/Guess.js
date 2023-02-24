@@ -1,19 +1,17 @@
 import React from 'react';
-import {range} from "../../utils";
+import { range } from '../../utils';
 
-function Guess({attempt}) {
-  const arr = range(0,5);
-
+function Guess({ attempt }) {
   return (
     <p className="guess">
-      {
-        arr.map(index => {
-          const letter = (attempt) ? attempt[index] : '';
-          return (
-            <span key={index} className="cell">{letter}</span>
-          )
-        })
-      }
+      {range(0, 5).map((index) => {
+        const letter = attempt ? attempt[index] : '';
+        return (
+          <span key={index} className="cell">
+            {letter}
+          </span>
+        );
+      })}
     </p>
   );
 }
