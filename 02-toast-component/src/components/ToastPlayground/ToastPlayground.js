@@ -11,13 +11,13 @@ function ToastPlayground() {
   const {handleNewToast} = React.useContext(ToastContext);
 
   const [message, setMessage] = React.useState('');
-  const [variant, setVariant] = React.useState('notice');
+  const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
     handleNewToast(variant, message);
     setMessage('');
-    setVariant('notice');
+    setVariant(VARIANT_OPTIONS[0]);
   }
 
   return (
