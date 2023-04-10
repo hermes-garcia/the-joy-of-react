@@ -17,15 +17,14 @@ function ToastProvider({children}) {
     setToasts([...newToasts]);
   };
 
-  const handleDismissAll = () => {
+  const handleDismissAll = React.useCallback(() => {
     setToasts([]);
-  };
+  }, []);
 
   const value = {
     toasts,
     handleNewToast,
-    handleDismiss,
-    handleDismissAll
+    handleDismiss
   }
 
   useEscapeKey(handleDismissAll);
