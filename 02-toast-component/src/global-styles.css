@@ -88,7 +88,7 @@ html {
 body {
   background-attachment: fixed;
   background-image: conic-gradient(
-    from 270deg at 50% -20%,
+    from 270deg at 51% -20%,
     hsl(240deg 40% 5%) 50%,
     hsl(250deg 40% 20%),
     hsl(250deg 30% 25%),
